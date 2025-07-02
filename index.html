@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKU FAS Library Dashboard</title>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  /* overflow: hidden; disables scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #003c2f;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-bottom: 5px solid #00693e;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00693e;
+      padding-top: 5px;
+     
+    }
+
+     main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+    .dashboard {
+  margin-top: 10px; /* space after the header */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns per row */
+  gap: 15px;
+  padding: 16px;
+  max-width: 1300px;
+   width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+ 
+  /* width: 95%;
+  max-width: 1600px; */
+   
+  
+}
+
+   
+
+    .tile {
+      /* background: white; */
+       background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      /* padding: 20px; */
+      transition: all 0.3s ease;
+      cursor: pointer;
+      animation: fadeInUp 0.6s ease-out;
+      padding: 10px;
+  max-width: 360px;
+  margin: auto;
+    }
+
+    .tile:hover {
+      /* transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); */
+       border: 2px solid #00a676;
+  box-shadow: 0 12px 24px rgba(0, 166, 118, 0.4);
+    }
+/* 
+    .tile img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 10px;
+    } */
+     .tile img {
+  width: 85%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+    .tile-title {
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #004d40;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin-top: 35px;
+    }
+
+    .clock {
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body onload="updateClock(); setInterval(updateClock, 1000)">
+  <header>
+    <img src="logo.png" alt="AKU Logo" />
+    <h1>Welcome to AKU Library Information Portal </h1>
+  </header>
+
+  <div class="dashboard">
+    <a href="https://research.ebsco.com/c/cjppqf/search?isDashboardExpanded=true" target="_blank">
+      <div class="tile">
+        <img src="discovery.png" alt="AKU Discovery Logo" />
+        <div class="tile-title">AKU Discovery</div>
+      </div>
+    </a>
+
+    <a href="https://safari.library.aku.edu/uhtbin/cgisirsi.exe/?ps=2kOlFGyLik/FK/X/60/502/X" target="_blank">
+      <div class="tile">
+        <img src="safari.png" alt="SAFARI Catalogue Logo" />
+        <div class="tile-title">Library Catalogue</div>
+      </div>
+    </a>
+
+    <a href="https://guides.library.aku.edu/" target="_blank">
+      <div class="tile">
+        <img src="libguide.png" alt="LibGuides Logo" />
+        <div class="tile-title">LibGuides</div>
+      </div>
+    </a>
+
+    <a href="https://www.aku.edu/library/pk/fas/Pages/home.aspx" target="_blank">
+      <div class="tile">
+        <img src="fass.png" alt="FAS Library Logo" />
+        <div class="tile-title">FAS Library Website</div>
+      </div>
+    </a>
+
+    <a href="https://ecommons.aku.edu/" target="_blank">
+      <div class="tile">
+        <img src="ecommon.png" alt="eCommons@AKU Logo" />
+        <div class="tile-title">eCommons </div>
+      </div>
+    </a>
+
+    <a href="https://scholars.aku.edu/" target="_blank">
+      <div class="tile">
+        <img src="scholars.png" alt="AKU Scholars Gallery Logo" />
+        <div class="tile-title">AKU Scholars Gallery</div>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 The Aga Khan University Library | <span class="clock" id="clock"></span>
+  </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const clock = document.getElementById("clock");
+      clock.textContent = now.toLocaleDateString('en-US', options);
+    }
+  </script>
+</body>
+
+</html>
+
+
